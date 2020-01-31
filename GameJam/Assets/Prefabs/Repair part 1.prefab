@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6122616304224145732}
   m_Layer: 0
   m_Name: Repair part 1
-  m_TagString: Untagged
+  m_TagString: repairPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
