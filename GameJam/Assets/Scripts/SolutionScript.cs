@@ -6,13 +6,13 @@ public class SolutionScript : MonoBehaviour
 {
     public GameObject[] solutions;
     private Vector3 solutionDistance;
-    private Vector3 solutionRotation;
+    private Quaternion solutionRotation;
     // Start is called before the first frame update
     void Start()
     {
         GameObject currentSolution = solutions[0];
         solutionDistance = currentSolution.transform.GetChild(0).position - currentSolution.transform.GetChild(1).position;
-        solutionRotation = currentSolution.transform.GetChild(0).eulerAngles - currentSolution.transform.GetChild(1).eulerAngles;
+        solutionRotation = Quaternion.Inverse(currentSolution.transform.GetChild(1).rotation) * currentSolution.transform.GetChild(0).rotation;
     }
 
     // Update is called once per frame
@@ -27,16 +27,16 @@ public class SolutionScript : MonoBehaviour
         }
 
         float distance = (repairedObject.transform.position - repairPart.transform.position - solutionDistance).sqrMagnitude;
-        float rotationDistance = (repairedObject.transform.eulerAngles - repairPart.transform.eulerAngles - solutionRotation).sqrMagnitude;
+        float rotationDistance = Quaternion.Angle(solutionRotation, Quaternion.Inverse(repairPart.transform.rotation) * repairedObject.transform.rotation);
 
-        if (distance < 0.15 && rotationDistance < 0.1)
+        if (distance < 0.15 && rotationDistance < 10)
         {
             Debug.Log("Success");
-            repairPart.transform.SetPositionAndRotation(repairedObject.transform.position + solutionDistance, repairedObject.transform.rotation * Quaternion.Euler(solutionRotation));
+            repairPart.transform.SetPositionAndRotation(repairedObject.transform.position + solutionDistance, repairedObject.transform.rotation * solutionRotation);
             repairPart.transform.SetParent(repairedObject.transform);
         } else
         {
-            //Debug.Log(distance + " ----- " + rotationDistance);
+            Debug.Log(distance + " ----- " + rotationDistance);
         }
     }
 }
