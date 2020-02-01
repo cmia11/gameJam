@@ -30,6 +30,9 @@ public class CollideCursorObject : MonoBehaviour
         {
             Debug.Log("2fois");
             activeObject.transform.position = transform.position;
+        } else
+        {
+            keyPressedOnce = false;
         }
 
 
