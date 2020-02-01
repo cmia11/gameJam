@@ -36,7 +36,7 @@ public class SolutionScript : MonoBehaviour
             repairPart.transform.SetParent(repairedObject.transform);
         } else
         {
-            Debug.Log(distance + " ----- " + rotationDistance);
+            //Debug.Log(distance + " ----- " + rotationDistance);
         }
     }
 }
