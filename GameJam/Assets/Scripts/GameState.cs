@@ -2,19 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
 public class GameState : MonoBehaviour
 {
-    public int score;
+    public int score = 0;
     public float timeLeft;
     public TextMeshProUGUI scoreText;
-    public TextMeshProUGUI gameOverText;
     // Start is called before the first frame update
     void Start()
     {
         timeLeft = 60;
+
     }
 
     // Update is called once per frame
@@ -26,5 +27,6 @@ public class GameState : MonoBehaviour
             Debug.Log("GAME OVER!");
             Debug.Log("Score: " + score);
         }
+        scoreText.text = "Score: " + score;
     }
 }
