@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -127,11 +127,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -8800402944906152603, guid: 63b5512780749d04f85ec957003fb945,
-        type: 3}
-      propertyPath: m_UseGravity
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1780954076064487053, guid: 63b5512780749d04f85ec957003fb945,
         type: 3}
       propertyPath: m_Name
@@ -847,6 +842,7 @@ GameObject:
   - component: {fileID: 1126685774}
   - component: {fileID: 1126685773}
   - component: {fileID: 1126685777}
+  - component: {fileID: 1126685778}
   m_Layer: 0
   m_Name: Cursor
   m_TagString: Untagged
@@ -921,7 +917,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1126685772}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.25, y: 7.07, z: 0.99}
+  m_LocalPosition: {x: 3.44, y: 1.27, z: 0.04}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -937,6 +933,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 14afe4bb4b640a542b1c88a8133c8139, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1126685778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1126685772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fdb4630afbb10748b6455acd327bb62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   iSObjectActive: 0
@@ -1133,7 +1141,7 @@ PrefabInstance:
     - target: {fileID: 4745149583869167441, guid: df529280245d8e140ae01eb186763d0d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.0055400357
+      value: -4.94
       objectReference: {fileID: 0}
     - target: {fileID: 4745149583869167441, guid: df529280245d8e140ae01eb186763d0d,
         type: 3}

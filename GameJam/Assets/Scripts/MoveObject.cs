@@ -16,7 +16,7 @@ public class MoveObject : MonoBehaviour
     private float yMax = 7;
     private float zMin = -5;
     private float zMax = 8;
-    public bool iSObjectActive = false;
+
 
     void Start()
     {
@@ -27,7 +27,6 @@ public class MoveObject : MonoBehaviour
     void Update()
     {
         Move3DTranslate();
-
     }
 
     void Move3DTranslate()
@@ -85,9 +84,9 @@ public class MoveObject : MonoBehaviour
         transform.Rotate(new Vector3(0, 0, 1) * Time.deltaTime * inputRotationZ * speed, Space.World);
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        iSObjectActive = true;
+ 
+           
+        
 
     }
-}
+
