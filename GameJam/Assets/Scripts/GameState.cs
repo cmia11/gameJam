@@ -12,6 +12,7 @@ public class GameState : MonoBehaviour
     public float timeLeft;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI gameOverText;
+    public TextMeshProUGUI startText;
     public bool isGameOver = false;
     public Button buttonStart;
     public TextMeshProUGUI title;
@@ -20,7 +21,7 @@ public class GameState : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartGame();
 
         timeLeft = 10;
         playerAudio = GetComponent<AudioSource>();
@@ -45,6 +46,9 @@ public class GameState : MonoBehaviour
     public void StartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        gameOverText.gameObject.SetActive(false);
+        gameOverText.gameObject.SetActive(false);
+
 
     }
 }
