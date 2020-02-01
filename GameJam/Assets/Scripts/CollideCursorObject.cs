@@ -35,17 +35,13 @@ public class CollideCursorObject : MonoBehaviour
 
     }
 
-    public void OnCollisionEnter(Collision collision)
+    public void OnTriggerEnter(Collider other)
     {
-
-
         Debug.Log("collision détectée");
         activeObject = other.gameObject;
-
-
     }
 
-    public void OnCollisionExit(Collision collision)
+    public void OnTriggerExit(Collider other)
     {
         activeObject = null;
     }
