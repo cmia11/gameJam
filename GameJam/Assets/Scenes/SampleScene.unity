@@ -412,7 +412,6 @@ MonoBehaviour:
   gameOverText: {fileID: 606325749}
   startText: {fileID: 49508789}
   isGameOver: 0
-  buttonStart: {fileID: 513768715}
   title: {fileID: 576119437}
 --- !u!4 &145005602
 Transform:
@@ -1025,7 +1024,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &513768714
 RectTransform:
   m_ObjectHideFlags: 0
