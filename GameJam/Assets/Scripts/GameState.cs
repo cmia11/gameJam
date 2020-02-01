@@ -16,5 +16,10 @@ public class GameState : MonoBehaviour
     void Update()
     {
         timeLeft -= Time.deltaTime;
+        if (timeLeft <= 0)
+        {
+            Debug.Log("GAME OVER!");
+            Debug.Log("Score: " + score);
+        }
     }
 }
