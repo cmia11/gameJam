@@ -32,13 +32,6 @@ public class CollideCursorObject : MonoBehaviour
             activeObject.transform.position = transform.position;
         }
 
-        if (!keyPressedOnce)
-        {
-            activeObject = null;
-        }
-
-
-
 
     }
 
