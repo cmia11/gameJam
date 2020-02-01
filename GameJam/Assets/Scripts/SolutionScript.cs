@@ -5,13 +5,12 @@ using UnityEngine;
 public class SolutionScript : MonoBehaviour
 {
     public GameObject[] solutions;
-    private GameObject currentSolution;
     private Vector3 solutionDistance;
     private Vector3 solutionRotation;
     // Start is called before the first frame update
     void Start()
     {
-        currentSolution = solutions[0];
+        GameObject currentSolution = solutions[0];
         solutionDistance = currentSolution.transform.GetChild(0).position - currentSolution.transform.GetChild(1).position;
         solutionRotation = currentSolution.transform.GetChild(0).eulerAngles - currentSolution.transform.GetChild(1).eulerAngles;
     }
@@ -33,10 +32,8 @@ public class SolutionScript : MonoBehaviour
         if (distance < 0.15 && rotationDistance < 0.1)
         {
             Debug.Log("Success");
-            repairedObject.SetActive(false);
-            repairPart.SetActive(false);
-            solutions[0].transform.SetPositionAndRotation(repairedObject.transform.position, repairedObject.transform.rotation);
-            solutions[0].SetActive(true);
+            repairPart.transform.SetPositionAndRotation(repairedObject.transform.position + solutionDistance, repairedObject.transform.rotation * Quaternion.Euler(solutionRotation));
+            repairPart.transform.SetParent(repairedObject.transform);
         } else
         {
             Debug.Log(distance + " ----- " + rotationDistance);
