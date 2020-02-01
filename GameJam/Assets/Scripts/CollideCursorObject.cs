@@ -7,11 +7,11 @@ public class CollideCursorObject : MonoBehaviour
     GameObject activeObject = null;
     string tagPlayer;
     private bool keyPressedOnce = false;
+    private MeshRenderer meshCursor;
     // Start is called before the first frame update
     void Start()
     {
-
-
+        meshCursor = GetComponent<MeshRenderer>();
     }
 
     // Update is called once per frame
@@ -25,12 +25,18 @@ public class CollideCursorObject : MonoBehaviour
             if (keyPressedOnce && activeObject != null)
             {
                 activeObject.transform.SetParent(transform);
+                meshCursor.enabled = false;
+                // faire disparaître le curseur
             } else if (!keyPressedOnce)
             {
                 activeObject.transform.parent = null;
+                // faire apparaître le curseur
+                meshCursor.enabled = true;
             } else
             {
                 keyPressedOnce = false;
+                meshCursor.enabled = true;
+                // faire apparaître le curseur
             }
             
         }
