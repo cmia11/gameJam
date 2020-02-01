@@ -11,10 +11,15 @@ public class GameState : MonoBehaviour
     public int score = 0;
     public float timeLeft;
     public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI gameOverText;
+    public bool isGameOver = false;
+    
     // Start is called before the first frame update
     void Start()
     {
-        timeLeft = 60;
+        
+
+        timeLeft = 10;
 
     }
 
@@ -26,6 +31,8 @@ public class GameState : MonoBehaviour
         {
             Debug.Log("GAME OVER!");
             Debug.Log("Score: " + score);
+            gameOverText.gameObject.SetActive(true);
+            isGameOver = true;
         }
         scoreText.text = "Score: " + score;
     }
