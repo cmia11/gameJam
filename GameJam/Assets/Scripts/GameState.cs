@@ -1,12 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using 
+using TMPro;
+using UnityEngine.UI;
+
 
 public class GameState : MonoBehaviour
 {
     public int score;
     public float timeLeft;
+    public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI gameOverText;
     // Start is called before the first frame update
     void Start()
     {
