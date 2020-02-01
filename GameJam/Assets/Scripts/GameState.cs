@@ -14,7 +14,7 @@ public class GameState : MonoBehaviour
     public TextMeshProUGUI gameOverText;
     public TextMeshProUGUI startText;
     public bool isGameOver = false;
-   // public Button buttonStart;
+    // public Button buttonRestart;
     public TextMeshProUGUI title;
     private AudioSource playerAudio;
 
@@ -23,7 +23,7 @@ public class GameState : MonoBehaviour
     {
         StartGame();
 
-        timeLeft = 60;
+        timeLeft = 500;
         playerAudio = GetComponent<AudioSource>();
 
     }
@@ -36,8 +36,9 @@ public class GameState : MonoBehaviour
         {
             Debug.Log("GAME OVER!");
             Debug.Log("Score: " + score);
-          //  buttonStart.onClick.AddListener(StartGame);
+            
             gameOverText.gameObject.SetActive(true);
+           // buttonRestart.gameObject.SetActive(true);
             isGameOver = true;
         }
         scoreText.text = "Score: " + score;
