@@ -409,6 +409,8 @@ MonoBehaviour:
   scoreText: {fileID: 1538070320}
   gameOverText: {fileID: 606325749}
   isGameOver: 0
+  buttonStart: {fileID: 513768715}
+  title: {fileID: 576119437}
 --- !u!4 &145005602
 Transform:
   m_ObjectHideFlags: 0
@@ -1013,7 +1015,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 513768716}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 49508787}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &513768716
 MonoBehaviour:
   m_ObjectHideFlags: 0

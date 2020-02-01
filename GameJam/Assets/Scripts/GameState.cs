@@ -13,6 +13,8 @@ public class GameState : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI gameOverText;
     public bool isGameOver = false;
+    public Button buttonStart;
+    public TextMeshProUGUI title;
     
     // Start is called before the first frame update
     void Start()
@@ -31,9 +33,16 @@ public class GameState : MonoBehaviour
         {
             Debug.Log("GAME OVER!");
             Debug.Log("Score: " + score);
+            buttonStart.onClick.AddListener(StartGame);
             gameOverText.gameObject.SetActive(true);
             isGameOver = true;
         }
         scoreText.text = "Score: " + score;
+    }
+
+    public void StartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
     }
 }
