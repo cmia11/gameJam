@@ -345,8 +345,8 @@ InputManager:
     m_Name: AxeX
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: a
-    positiveButton: e
+    negativeButton: q
+    positiveButton: d
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000
@@ -377,8 +377,8 @@ InputManager:
     m_Name: AxeZ
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: d
-    positiveButton: q
+    negativeButton: a
+    positiveButton: e
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000
