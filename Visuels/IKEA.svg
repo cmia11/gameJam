@@ -25,7 +25,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -45,9 +45,9 @@
      id="namedview4520"
      showgrid="false"
      units="mm"
-     inkscape:zoom="0.56533333"
-     inkscape:cx="200.81141"
-     inkscape:cy="650.34204"
+     inkscape:zoom="0.79950206"
+     inkscape:cx="124.22784"
+     inkscape:cy="904.41016"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
@@ -215,7 +215,7 @@
   </g>
   <g
      id="g4792"
-     transform="translate(-398.33546,520.63958)">
+     transform="translate(-400.98876,548.94146)">
     <use
        x="0"
        y="0"
@@ -334,7 +334,7 @@
   <g
      style="fill:#ffffff"
      id="g4806"
-     transform="translate(-541.50962,524.36665)">
+     transform="translate(-544.16292,552.66853)">
     <path
        style="fill:#ffffff;stroke:#000000;stroke-width:1.29999995;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 672.78639,-64.306807 c 0,-6.885477 0.16861,-8.699346 4.55082,-8.699346 h 22.92257 c 3.70807,0 3.03772,5.413702 3.03772,8.699346 h -6.40868 v 25.22422 h -17.69758 v -25.22422 z"
@@ -598,7 +598,7 @@
   </g>
   <g
      id="g5035"
-     transform="translate(-769.61746,367.21341)">
+     transform="translate(-523.74482,405.24407)">
     <rect
        y="-51.961346"
        x="816.28931"
@@ -628,60 +628,60 @@
   <text
      xml:space="preserve"
      style="font-style:normal;font-weight:normal;font-size:16px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-     x="110.63503"
-     y="334.09979"
+     x="356.50769"
+     y="372.13046"
      id="text5077"><tspan
        sodipodi:role="line"
        id="tspan5075"
-       x="110.63503"
-       y="334.09979"
+       x="356.50769"
+       y="372.13046"
        style="font-size:12px">12x</tspan></text>
   <text
      id="text5081"
-     y="142.5489"
-     x="-332.56708"
+     y="391.95932"
+     x="-371.92441"
      style="font-style:normal;font-weight:normal;font-size:16px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
      xml:space="preserve"
      transform="rotate(-90)"><tspan
        style="font-size:4.66666651px"
-       y="142.5489"
-       x="-332.56708"
+       y="391.95932"
+       x="-371.92441"
        id="tspan5079"
        sodipodi:role="line">12974066</tspan></text>
   <path
      sodipodi:nodetypes="cccccc"
      inkscape:connector-curvature="0"
      id="path5085"
-     d="m 56.603774,382.69065 39.136208,13.0454 0.88443,90.43337 -4.86439,2.6533 -40.020635,-103.47877 z"
+     d="m 53.950472,410.99253 39.136208,13.0454 0.88443,90.43337 -4.86439,2.6533 -40.020635,-103.47877 z"
      style="fill:#d1d2d4;fill-opacity:1;stroke:#000000;stroke-width:1.29999995;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
   <path
      style="fill:#d1d2d4;fill-opacity:1;stroke:#000000;stroke-width:1.29999995;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     d="m 51.739387,385.34395 39.136205,13.0454 0.88443,90.43337 -38.693983,-15.25649 z"
+     d="m 49.086085,413.64583 39.136205,13.0454 0.88443,90.43337 -38.693983,-15.25649 z"
      id="path5083"
      inkscape:connector-curvature="0"
      sodipodi:nodetypes="ccccc" />
   <path
      style="fill:none;stroke:#000000;stroke-width:1.29999995;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     d="m 95.739982,395.73605 -4.86439,2.6533"
+     d="m 93.08668,424.03793 -4.86439,2.6533"
      id="path5087"
      inkscape:connector-curvature="0" />
   <ellipse
      style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.29999995;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
      id="path5089"
-     cx="66.873795"
-     cy="474.11859"
+     cx="64.22049"
+     cy="502.42044"
      rx="1.5634731"
      ry="2.1106887" />
   <ellipse
      ry="2.1106887"
      rx="1.5634731"
-     cy="477.24554"
-     cx="74.691162"
+     cy="505.54739"
+     cx="72.037857"
      id="ellipse5091"
      style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.29999995;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none" />
   <g
      id="g5111"
-     transform="translate(-22.579474,-318.42615)">
+     transform="translate(223.29316,-280.39549)">
     <path
        sodipodi:nodetypes="ccccccccsccc"
        inkscape:connector-curvature="0"
@@ -712,4 +712,45 @@
        d="m 197.03651,639.28383 c 0.62968,3.04691 0.4574,5.80221 2.56008,9.38476"
        style="fill:#ffffff;stroke:#000000;stroke-width:1.29999995;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
   </g>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:160px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+     x="38.547035"
+     y="374.00528"
+     id="text5317"><tspan
+       sodipodi:role="line"
+       id="tspan5315"
+       x="38.547035"
+       y="374.00528"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:100px;font-family:'Franklin Gothic Medium';-inkscape-font-specification:'Franklin Gothic Medium, '">TITRE</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:16px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+     x="418.77948"
+     y="415.85693"
+     id="text5339"><tspan
+       sodipodi:role="line"
+       id="tspan5337"
+       x="418.77948"
+       y="415.85693">Références de pièce</tspan></text>
+  <text
+     id="text5343"
+     y="438.8522"
+     x="418.77948"
+     style="font-style:normal;font-weight:normal;font-size:16px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+     xml:space="preserve"><tspan
+       y="438.8522"
+       x="418.77948"
+       id="tspan5341"
+       sodipodi:role="line">Nombre de pièces</tspan></text>
+  <path
+     style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     d="M 417.89505,410.55034 390.91981,376.05742"
+     id="path5345"
+     inkscape:connector-curvature="0" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     d="m 416.12618,429.12345 -45.54835,-49.5283"
+     id="path5347"
+     inkscape:connector-curvature="0" />
 </svg>
