@@ -32,6 +32,12 @@ public class CollideCursorObject : MonoBehaviour
             activeObject.transform.position = transform.position;
         }
 
+        if (!keyPressedOnce)
+        {
+            activeObject = null;
+        }
+
+
 
 
     }
@@ -44,10 +50,5 @@ public class CollideCursorObject : MonoBehaviour
         activeObject = other.gameObject;
 
 
-    }
-
-    public void OnTriggerExit(Collider other)
-    {
-        activeObject = null;
     }
 }
