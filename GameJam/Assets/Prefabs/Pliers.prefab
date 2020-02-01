@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 4365933731902075174}
   m_Layer: 0
   m_Name: Pliers
-  m_TagString: Untagged
+  m_TagString: solution
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4365933731902075174
 Transform:
   m_ObjectHideFlags: 0
@@ -43,9 +43,11 @@ GameObject:
   - component: {fileID: 989021332610703456}
   - component: {fileID: 7781282157914754747}
   - component: {fileID: 562435696617722293}
+  - component: {fileID: 7950904918476286343}
+  - component: {fileID: 1200685170792901278}
   m_Layer: 0
   m_Name: Blades
-  m_TagString: Untagged
+  m_TagString: repairedObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -110,6 +112,36 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!54 &7950904918476286343
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2374442033643848973}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &1200685170792901278
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2374442033643848973}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 7941439370007208178, guid: a732068e985f8b448a6c3c840a26e377, type: 3}
 --- !u!1 &8723439420615952905
 GameObject:
   m_ObjectHideFlags: 0
@@ -121,9 +153,11 @@ GameObject:
   - component: {fileID: 3583861879360745176}
   - component: {fileID: 8475557173060838828}
   - component: {fileID: 3443544677245010947}
+  - component: {fileID: 3714095442735435743}
+  - component: {fileID: 1857930857957178723}
   m_Layer: 0
   m_Name: Axis
-  m_TagString: Untagged
+  m_TagString: repairPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -188,3 +222,33 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!54 &3714095442735435743
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8723439420615952905}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &1857930857957178723
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8723439420615952905}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -6029220463044473203, guid: a732068e985f8b448a6c3c840a26e377, type: 3}

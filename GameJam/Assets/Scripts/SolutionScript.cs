@@ -73,13 +73,13 @@ public class SolutionScript : MonoBehaviour
             GameObject repairedObjectToClone = getChildWithTag(currentSolution, "repairedObject");
             GameObject repairPartToClone = getChildWithTag(currentSolution, "repairPart");
 
-            GameObject repairedObject = Instantiate(repairedObjectToClone, new Vector3(-8.9f, 3.8f, 0.2f), Random.rotation);
-            GameObject repairPart = Instantiate(repairPartToClone, new Vector3(-9.9f, 4.8f, 1.2f), Random.rotation);
+            GameObject repairedObject = Instantiate(repairedObjectToClone, new Vector3(-0.45f, 0.19f, 0.01f), Random.rotation);
+            GameObject repairPart = Instantiate(repairPartToClone, new Vector3(-0.5f, 0.24f, 0.06f), Random.rotation);
 
             repairedObject.GetComponent<Rigidbody>().isKinematic = false;
-            repairedObject.GetComponent<Rigidbody>().AddForce(400 * (new Vector3(10, 0, 0) - repairedObject.transform.position).normalized);
+            repairedObject.GetComponent<Rigidbody>().AddForce(100 * (new Vector3(0.5f, 0, 0) - repairedObject.transform.position).normalized);
             repairPart.GetComponent<Rigidbody>().isKinematic = false;
-            repairPart.GetComponent<Rigidbody>().AddForce(400 * (new Vector3(10, 0, 0) - repairPart.transform.position).normalized);
+            repairPart.GetComponent<Rigidbody>().AddForce(100 * (new Vector3(0.5f, 0, 0) - repairPart.transform.position).normalized);
 
             solutionDistance = currentSolution.transform.GetChild(0).position - currentSolution.transform.GetChild(1).position;
             solutionRotation = Quaternion.Inverse(currentSolution.transform.GetChild(1).rotation) * currentSolution.transform.GetChild(0).rotation;
