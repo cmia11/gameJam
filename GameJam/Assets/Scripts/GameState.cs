@@ -15,13 +15,15 @@ public class GameState : MonoBehaviour
     public bool isGameOver = false;
     public Button buttonStart;
     public TextMeshProUGUI title;
-    
+    private AudioSource playerAudio;
+
     // Start is called before the first frame update
     void Start()
     {
         
 
         timeLeft = 10;
+        playerAudio = GetComponent<AudioSource>();
 
     }
 
