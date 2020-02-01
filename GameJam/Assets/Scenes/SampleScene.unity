@@ -127,6 +127,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8800402944906152603, guid: 63b5512780749d04f85ec957003fb945,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1780954076064487053, guid: 63b5512780749d04f85ec957003fb945,
         type: 3}
       propertyPath: m_Name
@@ -1026,6 +1031,86 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1344258472
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1449851809889888014, guid: 646e0b3e67d1f784d9c5f58abcfca45f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1449851809889888014, guid: 646e0b3e67d1f784d9c5f58abcfca45f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 1449851809889888014, guid: 646e0b3e67d1f784d9c5f58abcfca45f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -8.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 1449851809889888014, guid: 646e0b3e67d1f784d9c5f58abcfca45f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1449851809889888014, guid: 646e0b3e67d1f784d9c5f58abcfca45f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1449851809889888014, guid: 646e0b3e67d1f784d9c5f58abcfca45f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1449851809889888014, guid: 646e0b3e67d1f784d9c5f58abcfca45f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1449851809889888014, guid: 646e0b3e67d1f784d9c5f58abcfca45f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1449851809889888014, guid: 646e0b3e67d1f784d9c5f58abcfca45f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1449851809889888014, guid: 646e0b3e67d1f784d9c5f58abcfca45f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1449851809889888014, guid: 646e0b3e67d1f784d9c5f58abcfca45f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2469574940570375453, guid: 646e0b3e67d1f784d9c5f58abcfca45f,
+        type: 3}
+      propertyPath: m_Name
+      value: Repaired object Solution
+      objectReference: {fileID: 0}
+    - target: {fileID: 2469574940570375453, guid: 646e0b3e67d1f784d9c5f58abcfca45f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 646e0b3e67d1f784d9c5f58abcfca45f, type: 3}
+--- !u!1 &1464960772 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2469574940570375453, guid: 646e0b3e67d1f784d9c5f58abcfca45f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1344258472}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1622657526
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1124,9 +1209,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe2acd117f9daf644bddf449c7ca2dd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  repairedObject: {fileID: 0}
-  repairPart: {fileID: 0}
-  solution: {fileID: 0}
+  solutions:
+  - {fileID: 1464960772}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!4 &1746095125
 Transform:
   m_ObjectHideFlags: 0
