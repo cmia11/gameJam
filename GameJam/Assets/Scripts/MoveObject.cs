@@ -10,6 +10,7 @@ public class MoveObject : MonoBehaviour
     private float inputY;
     private float inputZ;
     private float speed = 5;
+    private float speedR = 10;
     private float xMin = -6;
     private float xMax = 8;
     private float yMin = 0 ;
@@ -31,7 +32,7 @@ public class MoveObject : MonoBehaviour
 
     void Move3DTranslate()
     {
-        inputX = Input.GetAxis("Vertical");
+        inputX = Input.GetAxis("AxeY");
         transform.Translate(new Vector3(0,1,0) * Time.deltaTime * inputX * speed, Space.World);
 
         if (transform.position.x > xMax)
@@ -46,7 +47,7 @@ public class MoveObject : MonoBehaviour
 
         // gérer le bug quand ça sort de l'écran
 
-        inputY = Input.GetAxis("Horizontal");
+        inputY = Input.GetAxis("AxeX");
         transform.Translate(new Vector3(1,0,0) * Time.deltaTime * inputY * speed, Space.World);
 
         //gérer le bug lorsque ça sort de l'écran
@@ -61,7 +62,7 @@ public class MoveObject : MonoBehaviour
             transform.position = new Vector3(transform.position.x, 0, transform.position.z);
         }
 
-        inputZ = Input.GetAxis("Mouse ScrollWheel");
+        inputZ = Input.GetAxis("AxeZ");
         transform.Translate(new Vector3(0,0,1) * Time.deltaTime * inputZ * speed, Space.World);
 
         if (transform.position.z > zMax)
@@ -75,13 +76,14 @@ public class MoveObject : MonoBehaviour
         }
 
         float inputRotationX = Input.GetAxis("RotationX");
-        transform.Rotate(new Vector3(1, 0, 0) * Time.deltaTime * inputRotationX * speed, Space.World);
+        transform.Rotate(new Vector3(1, 0, 0) * Time.deltaTime * inputRotationX * speedR, Space.World);
+        transform.Rotate(new Vector3(1, 0, 0) * Time.deltaTime * inputRotationX * speedR, Space.World);
 
         float inputRotationY = Input.GetAxis("RotationY");
-        transform.Rotate(new Vector3(0, 1, 0) * Time.deltaTime * inputRotationY * speed, Space.World);
+        transform.Rotate(new Vector3(0, 1, 0) * Time.deltaTime * inputRotationY * speedR, Space.World);
 
         float inputRotationZ = Input.GetAxis("RotationZ");
-        transform.Rotate(new Vector3(0, 0, 1) * Time.deltaTime * inputRotationZ * speed, Space.World);
+        transform.Rotate(new Vector3(0, 0, 1) * Time.deltaTime * inputRotationZ * speedR, Space.World);
     }
 
  
