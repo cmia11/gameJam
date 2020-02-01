@@ -16,6 +16,7 @@ public class MoveObject : MonoBehaviour
     private float yMax = 7;
     private float zMin = -5;
     private float zMax = 8;
+    public bool iSObjectActive = false;
 
     void Start()
     {
@@ -25,8 +26,14 @@ public class MoveObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Move3DTranslate();
+
+    }
+
+    void Move3DTranslate()
+    {
         inputX = Input.GetAxis("Vertical");
-        transform.Translate(Vector3.up * Time.deltaTime * inputX * speed);
+        transform.Translate(new Vector3(0,1,0) * Time.deltaTime * inputX * speed);
         if (transform.position.x > xMax)
         {
             transform.position = new Vector3(8, transform.position.y, transform.position.z);
@@ -40,14 +47,14 @@ public class MoveObject : MonoBehaviour
         // gérer le bug quand ça sort de l'écran
 
         inputY = Input.GetAxis("Horizontal");
-        transform.Translate(Vector3.right * Time.deltaTime * inputY * speed);
-        
+        transform.Translate(new Vector3(1,0,0) * Time.deltaTime * inputY * speed);
+
         //gérer le bug lorsque ça sort de l'écran
         if (transform.position.y > yMax)
         {
             transform.position = new Vector3(transform.position.x, 7, transform.position.z);
         }
-        
+
         // gérer le bug lorsque ça sort de l'écran
         if (transform.position.y < yMin)
         {
@@ -55,7 +62,7 @@ public class MoveObject : MonoBehaviour
         }
 
         inputZ = Input.GetAxis("Mouse ScrollWheel");
-        transform.Translate(Vector3.forward * Time.deltaTime * inputZ * speed);
+        transform.Translate(new Vector3(0,0,1) * Time.deltaTime * inputZ * speed);
 
         if (transform.position.z > zMax)
         {
@@ -66,5 +73,11 @@ public class MoveObject : MonoBehaviour
         {
             transform.position = new Vector3(transform.position.x, transform.position.y, -5);
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        iSObjectActive = true;
+
     }
 }
