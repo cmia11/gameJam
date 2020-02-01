@@ -33,7 +33,8 @@ public class MoveObject : MonoBehaviour
     void Move3DTranslate()
     {
         inputX = Input.GetAxis("Vertical");
-        transform.Translate(new Vector3(0,1,0) * Time.deltaTime * inputX * speed);
+        transform.Translate(new Vector3(0,1,0) * Time.deltaTime * inputX * speed, Space.World);
+
         if (transform.position.x > xMax)
         {
             transform.position = new Vector3(8, transform.position.y, transform.position.z);
@@ -47,7 +48,7 @@ public class MoveObject : MonoBehaviour
         // gérer le bug quand ça sort de l'écran
 
         inputY = Input.GetAxis("Horizontal");
-        transform.Translate(new Vector3(1,0,0) * Time.deltaTime * inputY * speed);
+        transform.Translate(new Vector3(1,0,0) * Time.deltaTime * inputY * speed, Space.World);
 
         //gérer le bug lorsque ça sort de l'écran
         if (transform.position.y > yMax)
@@ -62,7 +63,7 @@ public class MoveObject : MonoBehaviour
         }
 
         inputZ = Input.GetAxis("Mouse ScrollWheel");
-        transform.Translate(new Vector3(0,0,1) * Time.deltaTime * inputZ * speed);
+        transform.Translate(new Vector3(0,0,1) * Time.deltaTime * inputZ * speed, Space.World);
 
         if (transform.position.z > zMax)
         {
@@ -73,6 +74,15 @@ public class MoveObject : MonoBehaviour
         {
             transform.position = new Vector3(transform.position.x, transform.position.y, -5);
         }
+
+        float inputRotationX = Input.GetAxis("RotationX");
+        transform.Rotate(new Vector3(1, 0, 0) * Time.deltaTime * inputRotationX * speed, Space.World);
+
+        float inputRotationY = Input.GetAxis("RotationY");
+        transform.Rotate(new Vector3(0, 1, 0) * Time.deltaTime * inputRotationY * speed, Space.World);
+
+        float inputRotationZ = Input.GetAxis("RotationZ");
+        transform.Rotate(new Vector3(0, 0, 1) * Time.deltaTime * inputRotationZ * speed, Space.World);
     }
 
     private void OnTriggerEnter(Collider other)
