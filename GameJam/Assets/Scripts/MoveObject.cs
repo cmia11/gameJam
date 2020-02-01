@@ -11,12 +11,12 @@ public class MoveObject : MonoBehaviour
     private float inputZ;
     private float speed = 0.2f;
     private float speedR = 40;
-    private float xMin = -6;
-    private float xMax = 8;
+    private float xMin = -0.3f;
+    private float xMax = 0.4f;
     private float yMin = 0 ;
-    private float yMax = 7;
-    private float zMin = -5;
-    private float zMax = 8;
+    private float yMax = 0.35f;
+    private float zMin = -0.25f;
+    private float zMax = 0.4f;
 
 
     void Start()
@@ -37,12 +37,12 @@ public class MoveObject : MonoBehaviour
 
         if (transform.position.x > xMax)
         {
-            transform.position = new Vector3(8, transform.position.y, transform.position.z);
+            transform.position = new Vector3(xMax, transform.position.y, transform.position.z);
         }
 
         if (transform.position.x < xMin)
         {
-            transform.position = new Vector3(-6, transform.position.y, transform.position.z);
+            transform.position = new Vector3(xMin, transform.position.y, transform.position.z);
         }
 
         // gérer le bug quand ça sort de l'écran
@@ -53,13 +53,13 @@ public class MoveObject : MonoBehaviour
         //gérer le bug lorsque ça sort de l'écran
         if (transform.position.y > yMax)
         {
-            transform.position = new Vector3(transform.position.x, 7, transform.position.z);
+            transform.position = new Vector3(transform.position.x, yMax, transform.position.z);
         }
 
         // gérer le bug lorsque ça sort de l'écran
         if (transform.position.y < yMin)
         {
-            transform.position = new Vector3(transform.position.x, 0, transform.position.z);
+            transform.position = new Vector3(transform.position.x, yMin, transform.position.z);
         }
 
         inputZ = Input.GetAxis("AxeZ");
@@ -67,12 +67,12 @@ public class MoveObject : MonoBehaviour
 
         if (transform.position.z > zMax)
         {
-            transform.position = new Vector3(transform.position.x, transform.position.y, 8);
+            transform.position = new Vector3(transform.position.x, transform.position.y, zMax);
         }
 
         if (transform.position.z < zMin)
         {
-            transform.position = new Vector3(transform.position.x, transform.position.y, -5);
+            transform.position = new Vector3(transform.position.x, transform.position.y, zMin);
         }
 
         float inputRotationX = Input.GetAxis("RotationX");
