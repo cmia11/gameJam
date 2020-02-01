@@ -7,6 +7,7 @@ TagManager:
   - repairPart
   - solution
   - repairedObject
+  - ikeaManual
   layers:
   - Default
   - TransparentFX

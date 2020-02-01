@@ -72,14 +72,32 @@ public class SolutionScript : MonoBehaviour
             currentSolution = solutions[currentPuzzleIndex];
             GameObject repairedObjectToClone = getChildWithTag(currentSolution, "repairedObject");
             GameObject repairPartToClone = getChildWithTag(currentSolution, "repairPart");
+            GameObject ikeaManualToClone = null;
+            try
+            {
+                ikeaManualToClone = getChildWithTag(currentSolution, "ikeaManual");
+            } catch (System.Exception e)
+            {
+                // Ikea manuals are not mandatory
+            }
 
             GameObject repairedObject = Instantiate(repairedObjectToClone, new Vector3(-0.45f, 0.19f, 0.01f), Random.rotation);
             GameObject repairPart = Instantiate(repairPartToClone, new Vector3(-0.5f, 0.24f, 0.06f), Random.rotation);
+            GameObject ikeaManual = null;
+            if (ikeaManualToClone != null)
+            {
+                ikeaManual = Instantiate(ikeaManualToClone, new Vector3(-0.4f, 0.14f, -0.04f), Random.rotation);
+            }
 
             repairedObject.GetComponent<Rigidbody>().isKinematic = false;
             repairedObject.GetComponent<Rigidbody>().AddForce(100 * (new Vector3(0.5f, 0, 0) - repairedObject.transform.position).normalized);
             repairPart.GetComponent<Rigidbody>().isKinematic = false;
             repairPart.GetComponent<Rigidbody>().AddForce(100 * (new Vector3(0.5f, 0, 0) - repairPart.transform.position).normalized);
+            if (ikeaManual != null)
+            {
+                ikeaManual.GetComponent<Rigidbody>().isKinematic = false;
+                ikeaManual.GetComponent<Rigidbody>().AddForce(100 * (new Vector3(0.5f, 0, 0) - ikeaManual.transform.position).normalized);
+            }
 
             solutionDistance = currentSolution.transform.GetChild(0).position - currentSolution.transform.GetChild(1).position;
             solutionRotation = Quaternion.Inverse(currentSolution.transform.GetChild(1).rotation) * currentSolution.transform.GetChild(0).rotation;
@@ -93,6 +111,17 @@ public class SolutionScript : MonoBehaviour
                 repairedObject.GetComponent<Rigidbody>().isKinematic = true;
                 GameObject repairPart = GameObject.FindGameObjectWithTag("repairPart");
                 repairPart.GetComponent<Rigidbody>().isKinematic = true;
+                try
+                {
+                    GameObject ikeaManual = GameObject.FindGameObjectWithTag("ikeaManual");
+                    if (ikeaManual != null)
+                    {
+                        ikeaManual.GetComponent<Rigidbody>().isKinematic = true;
+                    }
+                } catch (UnityException)
+                {
+                    // Ikea manual are not mandatory
+                }
                 initializingNextPuzzle = false;
             }
         }
@@ -106,6 +135,14 @@ public class SolutionScript : MonoBehaviour
             Destroy(repairedObject);
             GameObject repairPart = GameObject.FindGameObjectWithTag("repairPart");
             Destroy(repairPart);
+            try
+            {
+                GameObject ikeaManual = GameObject.FindGameObjectWithTag("ikeaManual");
+                Destroy(ikeaManual);
+            } catch (UnityException)
+            {
+                // Ikea manual are not mandatory
+            }
             finalizingCurrentPuzzle = false;
             initializingNextPuzzle = true;
             currentSolution = null;
