@@ -41,11 +41,18 @@ public class CollideCursorObject : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
         Debug.Log("collision détectée");
-        activeObject = other.gameObject;
+        if (!keyPressedOnce)
+        {
+            print("new game object");
+            activeObject = other.gameObject;
+        }
     }
 
     public void OnTriggerExit(Collider other)
     {
-        activeObject = null;
+        if (activeObject == other.gameObject)
+        {
+            activeObject = null;
+        }
     }
 }
