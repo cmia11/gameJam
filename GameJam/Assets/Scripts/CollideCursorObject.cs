@@ -22,17 +22,17 @@ public class CollideCursorObject : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             keyPressedOnce = !keyPressedOnce;
+            if (keyPressedOnce && activeObject != null)
+            {
+                activeObject.transform.SetParent(transform);
+            } else if (!keyPressedOnce)
+            {
+                activeObject.transform.parent = null;
+            } else
+            {
+                keyPressedOnce = false;
+            }
             
-            
-        }
-
-        if (keyPressedOnce && activeObject !=null)
-        {
-            Debug.Log("2fois");
-            activeObject.transform.position = transform.position;
-        } else
-        {
-            keyPressedOnce = false;
         }
 
 
