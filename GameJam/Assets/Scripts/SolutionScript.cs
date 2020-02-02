@@ -90,13 +90,15 @@ public class SolutionScript : MonoBehaviour
             }
 
             repairedObject.GetComponent<Rigidbody>().isKinematic = false;
-            repairedObject.GetComponent<Rigidbody>().AddForce(100 * (new Vector3(0.5f, 0, 0) - repairedObject.transform.position).normalized);
+            repairedObject.GetComponent<Rigidbody>().AddForce(20 * (new Vector3(0.5f, 0, 0) - repairedObject.transform.position).normalized);
             repairPart.GetComponent<Rigidbody>().isKinematic = false;
-            repairPart.GetComponent<Rigidbody>().AddForce(100 * (new Vector3(0.5f, 0, 0) - repairPart.transform.position).normalized);
+            repairPart.GetComponent<Rigidbody>().AddForce(20 * (new Vector3(0.5f, 0, 0) - repairPart.transform.position).normalized);
             if (ikeaManual != null)
             {
                 ikeaManual.GetComponent<Rigidbody>().isKinematic = false;
-                ikeaManual.GetComponent<Rigidbody>().AddForce(100 * (new Vector3(0.5f, 0, 0) - ikeaManual.transform.position).normalized);
+                ikeaManual.transform.GetChild(0).GetComponent<Rigidbody>().isKinematic = false;
+                ikeaManual.transform.GetChild(1).GetComponent<Rigidbody>().isKinematic = false;
+                ikeaManual.GetComponent<Rigidbody>().AddForce(20 * (new Vector3(0.5f, 0, 0) - ikeaManual.transform.position).normalized);
             }
 
             solutionDistance = currentSolution.transform.GetChild(0).position - currentSolution.transform.GetChild(1).position;
@@ -117,6 +119,8 @@ public class SolutionScript : MonoBehaviour
                     if (ikeaManual != null)
                     {
                         ikeaManual.GetComponent<Rigidbody>().isKinematic = true;
+                        ikeaManual.transform.GetChild(0).GetComponent<Rigidbody>().isKinematic = true;
+                        ikeaManual.transform.GetChild(1).GetComponent<Rigidbody>().isKinematic = true;
                     }
                 } catch (UnityException)
                 {
