@@ -17,7 +17,11 @@ public class CollideCursorObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (activeObject == null && !meshCursor.enabled)
+        {
+            keyPressedOnce = false;
+            meshCursor.enabled = true;
+        }
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
