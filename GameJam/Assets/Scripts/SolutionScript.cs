@@ -33,7 +33,7 @@ public class SolutionScript : MonoBehaviour
             return;
         }
 
-        if (currentPuzzleIndex > 1)
+        if (currentPuzzleIndex > 2)
         {
             return;
         }
