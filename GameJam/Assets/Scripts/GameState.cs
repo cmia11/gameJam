@@ -19,6 +19,8 @@ public class GameState : MonoBehaviour
     public TextMeshProUGUI title;
     private AudioSource playerAudio;
     public AudioClip fireSound;
+    public AudioClip doorBang1;
+    public AudioClip doorBang2;
     private int timeFire1;
     private int timeFire2;
     private int timeFire3;

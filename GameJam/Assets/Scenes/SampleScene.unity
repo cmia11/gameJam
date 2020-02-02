@@ -450,7 +450,9 @@ MonoBehaviour:
   isGameOver: 0
   buttonRestart: {fileID: 513768715}
   title: {fileID: 576119437}
-  fireSound: {fileID: 8300000, guid: 0471a689a40df164480a40834175054e, type: 3}
+  fireSound: {fileID: 8300000, guid: 041af95932dd4404bb55d70e8881c141, type: 3}
+  doorBang1: {fileID: 8300000, guid: 036aa252e3ce6d3459ae83313d8a859c, type: 3}
+  doorBang2: {fileID: 8300000, guid: a1816a99c98a03c4baf88cb86decc5c6, type: 3}
 --- !u!4 &145005602
 Transform:
   m_ObjectHideFlags: 0
