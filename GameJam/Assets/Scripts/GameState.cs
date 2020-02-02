@@ -56,17 +56,17 @@ public class GameState : MonoBehaviour
 
         if (Mathf.Round(timeTotal - timeLeft) == timeFire1)
         {
-            playerAudio.PlayOneShot(fireSound,1.5f);
+            playerAudio.PlayOneShot(fireSound,1.0f);
             
         }
         if (Mathf.Round(timeTotal - timeLeft) == timeFire2)
         {
-            playerAudio.PlayOneShot(fireSound, 1.5f);
+            playerAudio.PlayOneShot(fireSound, 1.0f);
 
         }
         if (Mathf.Round(timeTotal - timeLeft) == timeFire3)
         {
-            playerAudio.PlayOneShot(fireSound, 1.5f);
+            playerAudio.PlayOneShot(fireSound, 1.0f);
 
         }
         scoreText.text = "Score: " + score;
