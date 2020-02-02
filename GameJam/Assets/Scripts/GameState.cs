@@ -23,7 +23,7 @@ public class GameState : MonoBehaviour
     {
         StartGame();
 
-        timeLeft = 60;
+        timeLeft = 500;
         playerAudio = GetComponent<AudioSource>();
 
     }

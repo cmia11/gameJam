@@ -28,16 +28,25 @@ public class MoveObject : MonoBehaviour
     void Update()
     {
         Move3DTranslate();
-        if (Input.GetKeyDown(KeyCode.UpArrow) && speed < 0.045f && speedR < 60)
+        if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            speed += 0.05f;
-            speedR += 5;
+            if (speed < 1.5 && speedR < 200)
+            {
+                speed += 0.02f;
+                speedR += 5;
+                Debug.Log("j'ai pressé haut");
+            }
 
         }
-        else if (Input.GetKeyDown(KeyCode.DownArrow) && speed > 0.04f && speedR > 20)
+        else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            speed -= 0.05f;
-            speedR -= 5;
+            if(speed > 0.05 && speedR > 20)
+            {
+                speed -= 0.02f;
+                speedR -= 5;
+                Debug.Log("j'ai pressé la touche du bas");
+            }
+
         }
     }
 
