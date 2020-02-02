@@ -54,7 +54,7 @@ public class SolutionScript : MonoBehaviour
         float distance = (repairedObject.transform.position - repairPart.transform.position - solutionDistance).sqrMagnitude;
         float rotationDistance = Quaternion.Angle(solutionRotation, Quaternion.Inverse(repairPart.transform.rotation) * repairedObject.transform.rotation);
 
-        if (distance < 0.0001 && rotationDistance < 16)
+        if (distance < 0.0002 && rotationDistance < 16)
         {
             Debug.Log("Success");
             repairPart.transform.SetPositionAndRotation(repairedObject.transform.position + solutionDistance, repairedObject.transform.rotation * solutionRotation);
