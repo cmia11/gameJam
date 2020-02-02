@@ -11,10 +11,13 @@ public class GameManager : MonoBehaviour
     public GameObject titleS;
     public GameObject tutoClavier;
     public float timeStart;
+    private AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
         timeStart = 30;
+        audioSource = GetComponent<AudioSource>();
+ 
     }
 
     // Update is called once per frame
