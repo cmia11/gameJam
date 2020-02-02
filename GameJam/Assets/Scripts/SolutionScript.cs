@@ -13,6 +13,7 @@ public class SolutionScript : MonoBehaviour
     private float initTime = 0;
     private bool finalizingCurrentPuzzle = false;
     private float finalizeTime = 0;
+    private bool piecesCollected = false;
 
     private GameObject invisibleWalls;
 
@@ -25,6 +26,12 @@ public class SolutionScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (finalizingCurrentPuzzle)
+        {
+            finalizeCurrentPuzzle();
+            return;
+        }
+
         if (currentPuzzleIndex > 1)
         {
             return;
@@ -33,11 +40,6 @@ public class SolutionScript : MonoBehaviour
         if (initializingNextPuzzle)
         {
             initializeNextPuzzle();
-            return;
-        }
-        if (finalizingCurrentPuzzle)
-        {
-            finalizeCurrentPuzzle();
             return;
         }
 
@@ -79,7 +81,7 @@ public class SolutionScript : MonoBehaviour
             try
             {
                 ikeaManualToClone = getChildWithTag(currentSolution, "ikeaManual");
-            } catch (System.Exception e)
+            } catch (System.Exception)
             {
                 // Ikea manuals are not mandatory
             }
@@ -137,9 +139,34 @@ public class SolutionScript : MonoBehaviour
     }
     private void finalizeCurrentPuzzle()
     {
+        if (finalizeTime > 0.5f && !piecesCollected)
+        {
+            invisibleWalls.SetActive(false);
+            GameObject repairedObject = GameObject.FindGameObjectWithTag("repairedObject");
+            repairedObject.GetComponent<Rigidbody>().isKinematic = false;
+            repairedObject.GetComponent<Rigidbody>().AddForce(200 * (new Vector3(0.51f, 0.24f, -0.02f) - repairedObject.transform.position).normalized);
+            GameObject repairPart = GameObject.FindGameObjectWithTag("repairPart");
+            repairPart.GetComponent<Rigidbody>().isKinematic = false;
+            repairPart.GetComponent<Rigidbody>().AddForce(200 * (new Vector3(0.51f, 0.24f, -0.02f) - repairPart.transform.position).normalized);
+            try
+            {
+                GameObject ikeaManual = GameObject.FindGameObjectWithTag("ikeaManual");
+                if (ikeaManual != null)
+                {
+                    ikeaManual.GetComponent<Rigidbody>().isKinematic = false;
+                    ikeaManual.GetComponent<Rigidbody>().AddForce(400 * (new Vector3(0.51f, 0.24f, -0.02f) - ikeaManual.transform.position).normalized);
+                }
+            }
+            catch (UnityException)
+            {
+                // Ikea manual are not mandatory
+            }
+            piecesCollected = true;
+        }
         finalizeTime += Time.deltaTime;
         if (finalizeTime > 2)
         {
+            invisibleWalls.SetActive(true);
             GameObject repairedObject = GameObject.FindGameObjectWithTag("repairedObject");
             Destroy(repairedObject);
             GameObject repairPart = GameObject.FindGameObjectWithTag("repairPart");
@@ -155,6 +182,7 @@ public class SolutionScript : MonoBehaviour
             finalizingCurrentPuzzle = false;
             initializingNextPuzzle = true;
             currentSolution = null;
+            piecesCollected = false;
         }
     }
 
