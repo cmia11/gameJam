@@ -11,7 +11,7 @@ public class MoveObject : MonoBehaviour
     private float inputZ;
     public float speed = 0.2f;
     public float speedR = 40;
-    private float xMin = -0.3f;
+    private float xMin = -0.4f;
     private float xMax = 0.4f;
     private float yMin = 0 ;
     private float yMax = 0.35f;
