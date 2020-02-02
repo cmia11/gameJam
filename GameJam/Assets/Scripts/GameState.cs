@@ -10,6 +10,7 @@ public class GameState : MonoBehaviour
 {
     public int score = 0;
     public float timeLeft;
+
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI gameOverText;
     public TextMeshProUGUI startText;
@@ -17,13 +18,15 @@ public class GameState : MonoBehaviour
     public Button buttonRestart;
     public TextMeshProUGUI title;
     private AudioSource playerAudio;
+    
+      
 
     // Start is called before the first frame update
     void Start()
     {
         StartGame();
 
-        timeLeft = 500;
+        timeLeft = 100;
         playerAudio = GetComponent<AudioSource>();
 
     }
@@ -31,6 +34,7 @@ public class GameState : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         timeLeft -= Time.deltaTime;
         if (timeLeft <= 0)
         {
