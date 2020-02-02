@@ -14,9 +14,12 @@ public class SolutionScript : MonoBehaviour
     private bool finalizingCurrentPuzzle = false;
     private float finalizeTime = 0;
 
+    private GameObject invisibleWalls;
+
     // Start is called before the first frame update
     void Start()
     {
+        invisibleWalls = GameObject.FindGameObjectWithTag("invisible");
     }
 
     // Update is called once per frame
@@ -82,22 +85,24 @@ public class SolutionScript : MonoBehaviour
             }
 
             GameObject repairedObject = Instantiate(repairedObjectToClone, new Vector3(-0.45f, 0.19f, 0.01f), Random.rotation);
-            GameObject repairPart = Instantiate(repairPartToClone, new Vector3(-0.5f, 0.24f, 0.06f), Random.rotation);
+            GameObject repairPart = Instantiate(repairPartToClone, new Vector3(-0.52f, 0.2541f, 0.0136f), Random.rotation);
             GameObject ikeaManual = null;
             if (ikeaManualToClone != null)
             {
-                ikeaManual = Instantiate(ikeaManualToClone, new Vector3(-0.4f, 0.14f, -0.04f), Random.rotation);
+                ikeaManual = Instantiate(ikeaManualToClone, new Vector3(-0.4f, 0.146f, -0.0031f), new Quaternion(0,0,0,0));
             }
 
             repairedObject.GetComponent<Rigidbody>().isKinematic = false;
-            repairedObject.GetComponent<Rigidbody>().AddForce(20 * (new Vector3(0.5f, 0, 0) - repairedObject.transform.position).normalized);
+            repairedObject.GetComponent<Rigidbody>().AddForce(20 * (new Vector3(1, 0, 0) - repairedObject.transform.position).normalized);
             repairPart.GetComponent<Rigidbody>().isKinematic = false;
-            repairPart.GetComponent<Rigidbody>().AddForce(20 * (new Vector3(0.5f, 0, 0) - repairPart.transform.position).normalized);
+            repairPart.GetComponent<Rigidbody>().AddForce(20 * (new Vector3(1, 0, 0) - repairPart.transform.position).normalized);
             if (ikeaManual != null)
             {
                 ikeaManual.GetComponent<Rigidbody>().isKinematic = false;
-                ikeaManual.GetComponent<Rigidbody>().AddForce(20 * (new Vector3(0.5f, 0, 0) - ikeaManual.transform.position).normalized);
+                ikeaManual.GetComponent<Rigidbody>().AddForce(40 * (new Vector3(1, 0.5f, 0) - ikeaManual.transform.position).normalized);
             }
+
+            invisibleWalls.SetActive(false);
 
             solutionDistance = currentSolution.transform.GetChild(0).position - currentSolution.transform.GetChild(1).position;
             solutionRotation = Quaternion.Inverse(currentSolution.transform.GetChild(1).rotation) * currentSolution.transform.GetChild(0).rotation;
@@ -105,6 +110,10 @@ public class SolutionScript : MonoBehaviour
         } else
         {
             initTime += Time.deltaTime;
+            if (initTime > 0.5)
+            {
+                invisibleWalls.SetActive(true);
+            }
             if (initTime > 2)
             {
                 GameObject repairedObject = GameObject.FindGameObjectWithTag("repairedObject");
