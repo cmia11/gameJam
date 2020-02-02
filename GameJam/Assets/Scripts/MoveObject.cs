@@ -18,6 +18,7 @@ public class MoveObject : MonoBehaviour
     private float zMin = -0.25f;
     private float zMax = 0.4f;
 
+    private bool rotationMode = false;
 
     void Start()
     {
@@ -27,8 +28,13 @@ public class MoveObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.JoystickButton1))
+        {
+            rotationMode = !rotationMode;
+        }
+
         Move3DTranslate();
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.JoystickButton2))
         {
             if (speed < 1.5 && speedR < 200)
             {
@@ -38,7 +44,7 @@ public class MoveObject : MonoBehaviour
             }
 
         }
-        else if (Input.GetKeyDown(KeyCode.DownArrow))
+        else if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.JoystickButton3))
         {
             if(speed > 0.05 && speedR > 20)
             {
@@ -52,7 +58,7 @@ public class MoveObject : MonoBehaviour
 
     void Move3DTranslate()
     {
-        inputX = Input.GetAxis("AxeY");
+        inputX = Input.GetAxis("AxeY") * (rotationMode ? 0 : 1);
         transform.Translate(new Vector3(0,1,0) * Time.deltaTime * inputX * speed, Space.World);
 
         if (transform.position.x > xMax)
@@ -67,7 +73,7 @@ public class MoveObject : MonoBehaviour
 
         // gérer le bug quand ça sort de l'écran
 
-        inputY = Input.GetAxis("AxeX");
+        inputY = Input.GetAxis("AxeX") * (rotationMode ? 0 : 1);
         transform.Translate(new Vector3(1,0,0) * Time.deltaTime * inputY * speed, Space.World);
 
         //gérer le bug lorsque ça sort de l'écran
@@ -82,7 +88,7 @@ public class MoveObject : MonoBehaviour
             transform.position = new Vector3(transform.position.x, yMin, transform.position.z);
         }
 
-        inputZ = Input.GetAxis("AxeZ");
+        inputZ = Input.GetAxis("AxeZ") * (rotationMode ? 0 : 1);
         transform.Translate(new Vector3(0,0,1) * Time.deltaTime * inputZ * speed, Space.World);
 
         if (transform.position.z > zMax)
@@ -95,14 +101,14 @@ public class MoveObject : MonoBehaviour
             transform.position = new Vector3(transform.position.x, transform.position.y, zMin);
         }
 
-        float inputRotationX = Input.GetAxis("RotationX");
+        float inputRotationX = rotationMode ? Input.GetAxis("AxeY") : Input.GetAxis("RotationX");
         transform.Rotate(new Vector3(1, 0, 0) * Time.deltaTime * inputRotationX * speedR, Space.World);
         transform.Rotate(new Vector3(1, 0, 0) * Time.deltaTime * inputRotationX * speedR, Space.World);
 
-        float inputRotationY = Input.GetAxis("RotationY");
+        float inputRotationY = rotationMode ? Input.GetAxis("AxeX") : Input.GetAxis("RotationY");
         transform.Rotate(new Vector3(0, 1, 0) * Time.deltaTime * inputRotationY * speedR, Space.World);
 
-        float inputRotationZ = Input.GetAxis("RotationZ");
+        float inputRotationZ = rotationMode ? Input.GetAxis("AxeZ") : Input.GetAxis("RotationZ");
         transform.Rotate(new Vector3(0, 0, 1) * Time.deltaTime * inputRotationZ * speedR, Space.World);
     }
 

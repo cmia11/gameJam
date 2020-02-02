@@ -23,7 +23,7 @@ public class CollideCursorObject : MonoBehaviour
             meshCursor.enabled = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.JoystickButton0))
         {
             keyPressedOnce = !keyPressedOnce;
             if (keyPressedOnce && activeObject != null)
