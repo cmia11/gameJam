@@ -14,19 +14,22 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        timeStart = 28;
+        timeStart = 30;
     }
 
     // Update is called once per frame
     void Update()
     {
         timeStart -= Time.deltaTime;
-        if (Mathf.Round(timeStart) == 20)
+        if (Mathf.Round(timeStart) == 28)
         {
             tutoClavier.SetActive(true);
             titleS.SetActive(false);
         }
-
+        if (Input.anyKeyDown)
+        {
+            SceneManager.LoadScene(1);
+        }
         if (timeStart <= 0)
         {
             SceneManager.LoadScene(1);
