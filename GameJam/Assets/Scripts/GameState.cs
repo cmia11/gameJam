@@ -56,7 +56,7 @@ public class GameState : MonoBehaviour
             isGameOver = true;
         }
 
-        if (Mathf.Round(timeTotal - timeLeft) == timeFire1)
+        /* if (Mathf.Round(timeTotal - timeLeft) == timeFire1)
         {
             playerAudio.PlayOneShot(fireSound,1.0f);
             
@@ -71,6 +71,15 @@ public class GameState : MonoBehaviour
             playerAudio.PlayOneShot(fireSound, 1.0f);
 
         }
+        if (Mathf.Round(timeTotal - timeLeft) == 80)
+        {
+            playerAudio.PlayOneShot(doorBang1, 1.0f);
+        }
+        if (Mathf.Round(timeTotal - timeLeft) == 90)
+        {
+            playerAudio.PlayOneShot(doorBang, 1.0f);
+        }
+        */
         scoreText.text = "Score: " + score;
     }
 
