@@ -14,13 +14,14 @@ public class SolutionScript : MonoBehaviour
     private bool finalizingCurrentPuzzle = false;
     private float finalizeTime = 0;
     private bool piecesCollected = false;
-
+    public AudioClip objectsComing;
     private GameObject invisibleWalls;
 
     // Start is called before the first frame update
     void Start()
     {
         invisibleWalls = GameObject.FindGameObjectWithTag("invisible");
+        //playerAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
