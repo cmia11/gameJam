@@ -96,8 +96,6 @@ public class SolutionScript : MonoBehaviour
             if (ikeaManual != null)
             {
                 ikeaManual.GetComponent<Rigidbody>().isKinematic = false;
-                ikeaManual.transform.GetChild(0).GetComponent<Rigidbody>().isKinematic = false;
-                ikeaManual.transform.GetChild(1).GetComponent<Rigidbody>().isKinematic = false;
                 ikeaManual.GetComponent<Rigidbody>().AddForce(20 * (new Vector3(0.5f, 0, 0) - ikeaManual.transform.position).normalized);
             }
 
@@ -119,8 +117,6 @@ public class SolutionScript : MonoBehaviour
                     if (ikeaManual != null)
                     {
                         ikeaManual.GetComponent<Rigidbody>().isKinematic = true;
-                        ikeaManual.transform.GetChild(0).GetComponent<Rigidbody>().isKinematic = true;
-                        ikeaManual.transform.GetChild(1).GetComponent<Rigidbody>().isKinematic = true;
                     }
                 } catch (UnityException)
                 {
