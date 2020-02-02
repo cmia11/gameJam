@@ -9,8 +9,8 @@ public class MoveObject : MonoBehaviour
     private float inputX;
     private float inputY;
     private float inputZ;
-    private float speed = 0.2f;
-    private float speedR = 40;
+    public float speed = 0.2f;
+    public float speedR = 40;
     private float xMin = -0.3f;
     private float xMax = 0.4f;
     private float yMin = 0 ;
@@ -28,6 +28,17 @@ public class MoveObject : MonoBehaviour
     void Update()
     {
         Move3DTranslate();
+        if (Input.GetKeyDown(KeyCode.UpArrow) && speed < 0.045f && speedR < 60)
+        {
+            speed += 0.05f;
+            speedR += 5;
+
+        }
+        else if (Input.GetKeyDown(KeyCode.DownArrow) && speed > 0.04f && speedR > 20)
+        {
+            speed -= 0.05f;
+            speedR -= 5;
+        }
     }
 
     void Move3DTranslate()
